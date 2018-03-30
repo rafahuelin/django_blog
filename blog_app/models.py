@@ -8,6 +8,7 @@ class PublishedManager(models.Manager):
     def get_queryset(self):
         return super(PublishedManager, self).get_queryset().filter(status='published')
 
+
 class Post(models.Model):
     STATUS_CHOICES = (
         ('draft', 'Draft'),
@@ -34,6 +35,7 @@ class Post(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('blog_app:post', args=[self.publish.year,
+        return reverse('blog_app:post_detail', args=[self.publish.year,
                                               self.publish.strftime('%m'),
-                                              self.publish.strftime('%d')])
+                                              self.publish.strftime('%d'),
+                                              self.slug])

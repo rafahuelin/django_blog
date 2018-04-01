@@ -10,7 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
-import os, json
+import os
+import json
 
 from django.core.exceptions import ImproperlyConfigured
 
@@ -55,12 +56,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
-    # My apps
-    'blog_app',
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
 
     # Third party apps
     'taggit',
+
+    # My apps
+    'blog_app',
 ]
 
 MIDDLEWARE = [

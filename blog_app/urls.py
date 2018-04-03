@@ -20,4 +20,7 @@ urlpatterns = [
 
     # feed
     path('feed/', LatestPostsFeed(), name='post_feed'),
+
+    # search
+    path('search/', views.post_search, name='post_search'),
 ]
